@@ -12,8 +12,8 @@ def isPrime(num):
                 return False
         return True
 
-li=list(range(2,123456))
-prime_li=list()
+li=list(range(2,123456*2))
+prime_li=list()         # 미리 소수인 배열을 형성
 for i in li:
     if isPrime(i):
         prime_li.append(i)
@@ -23,6 +23,6 @@ while True:
     n=int(input())
     if n==0: break
     for i in prime_li:
-        if n<i<2*n:
+        if n<i<=2*n:
             ans+=1
     print(ans)
