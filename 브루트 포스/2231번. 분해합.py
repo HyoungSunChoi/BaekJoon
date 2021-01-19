@@ -7,6 +7,8 @@
 
 자연수 N이 주어졌을 때, N의 가장 작은 생성자를 구해내는 프로그램을 작성하시오.
 '''
+
+# 1 번째 방법
 n=int(input())
 sp=n//2
 flg=True
@@ -22,5 +24,25 @@ while sp<n:
         break
     else:
         sp+=1
+if flg==True:
+    print(0)
+
+
+# 2번째 방법 파이썬스럽게 풀기
+# 생성자
+def creater(num):
+    sum=0
+    a=list(map(int,str(num)))
+    for x in a:
+        sum+=x
+    sum+=num
+    return sum
+flg=True
+n=int(input())
+for i in range(n//2,n+1):
+    if creater(i)==n:
+        print(i)
+        flg=False
+        break
 if flg==True:
     print(0)
